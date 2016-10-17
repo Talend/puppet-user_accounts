@@ -8,6 +8,7 @@
   "project_page": "https://github.com/Talend/puppet-user_accounts",
   "issues_url": "https://github.com/Talend/puppet-user_accounts/issues",
   "dependencies": [
+    {"name":"puppetlabs-stdlib", "version_requirement": ">= 1.0.0 < 5.0.0"},
     {"name": "camptocamp/accounts", "version_requirement": "1.x"}
   ]
 }

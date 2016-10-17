@@ -7,8 +7,16 @@ class user_accounts (
 
 ) {
 
+  $teams_filter = hiera('users::teams_filter', [])
+
+  if size($teams_filter) > 0 {
+    $_accounts = team_filter($accounts, $users,  $teams_filter)
+  } else {
+    $_accounts = $accounts
+  }
+
   class { '::accounts':
-    accounts => team_filter($accounts, $users,  hiera('users::teams_filter')),
+    accounts => $_accounts,
     users    => $users,
     groups   => $groups,
     ssh_keys => $ssh_keys,
