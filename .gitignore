@@ -1,0 +1,14 @@
+modules/
+vendor/
+.bundle/
+.idea/
+log
+.vagrant
+site/role/spec/fixtures
+site/profile/spec/fixtures
+.kitchen/
+.librarian/
+.kitchen.local.yml
+.tmp/
+build/
+.swp

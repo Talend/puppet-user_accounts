@@ -1,0 +1,85 @@
+users::teams_filter:
+  - ops
+  - devops
+user_accounts::accounts:
+  user1:
+    authorized_keys:
+    - user_key_1
+    comment: UserName1
+    ensure: present
+  user2:
+    authorized_keys: []
+    comment: UserName2
+    ensure: present
+  user3:
+    authorized_keys:
+    - user_key_3_1
+    - user_key_3_2
+    comment: UserName3
+    ensure: present
+  user4:
+    authorized_keys:
+    - user_key_4_1
+    - user_key_4_2
+    comment: UserName4
+    ensure: absent
+  user5:
+    authorized_keys:
+    - user_key_5
+    comment: UserName5
+    ensure: present
+user_accounts::groups:
+  dev:
+    ensure: present
+  devops:
+    ensure: present
+  ops:
+    ensure: present
+  qa:
+    ensure: present
+user_accounts::ssh_keys:
+  user_key_1:
+    public: thekey
+    type: ssh-rsa
+  user_key_3_1:
+    public: thekey
+    type: ssh-rsa
+  user_key_3_2:
+    public: thekey
+    type: ssh-rsa
+  user_key_4_1:
+    public: thekey
+    type: ssh-rsa
+  user_key_4_2:
+    public: thekey
+    type: ssh-rsa
+  user_key_5:
+    public: thekey
+    type: ssh-rsa
+user_accounts::users:
+  user1:
+    groups:
+    - qa
+    - wheel
+    uid: 555001
+  user2:
+    groups:
+    - ops
+    - wheel
+    uid: 555002
+  user3:
+    groups:
+    - ops
+    - wheel
+    uid: 555003
+  user4:
+    groups:
+    - ops
+    - wheel
+    uid: 555004
+  user5:
+    groups:
+    - qa
+    - devops
+    - wheel
+    uid: 555005

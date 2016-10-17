@@ -1,0 +1,13 @@
+{
+  "name": "talend-user_accounts",
+  "version": "0.1.0",
+  "author": "talend",
+  "summary": "User accounts manager",
+  "license": "MIT",
+  "source": "https://github.com/Talend/puppet-user_accounts",
+  "project_page": "https://github.com/Talend/puppet-user_accounts",
+  "issues_url": "https://github.com/Talend/puppet-user_accounts/issues",
+  "dependencies": [
+    {"name": "camptocamp/accounts", "version_requirement": "1.x"}
+  ]
+}
