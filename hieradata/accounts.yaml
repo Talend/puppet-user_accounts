@@ -28,6 +28,11 @@ user_accounts::accounts:
     - user_key_5
     comment: UserName5
     ensure: present
+  user6:
+    authorized_keys:
+    - user_key_6
+    comment: UserName5
+    ensure: ""
 user_accounts::groups:
   dev:
     ensure: present
@@ -54,6 +59,9 @@ user_accounts::ssh_keys:
     public: thekey
     type: ssh-rsa
   user_key_5:
+    public: thekey
+    type: ssh-rsa
+  user_key_6:
     public: thekey
     type: ssh-rsa
 user_accounts::users:
@@ -83,3 +91,9 @@ user_accounts::users:
     - devops
     - wheel
     uid: 555005
+  user6:
+    groups:
+    - qa
+    - devops
+    - wheel
+    uid: 555006

@@ -28,4 +28,8 @@ describe 'user_accounts' do
       it { should exist }
   end
 
+  describe user('user6') do
+      it { should_not exist }
+  end
+
 end

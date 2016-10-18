@@ -16,7 +16,7 @@ class user_accounts (
   }
 
   class { '::accounts':
-    accounts => $_accounts,
+    accounts => hash_filter($_accounts, 'ensure', ['absent', 'present']),
     users    => $users,
     groups   => $groups,
     ssh_keys => $ssh_keys,
