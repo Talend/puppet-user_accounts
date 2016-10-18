@@ -16,8 +16,8 @@ module Puppet::Parser::Functions
     #  * the user has some groups
     #  * but the user doesn't belong to any of the groups specified
     accounts.each do |name, account|
-      continue unless users.has_key?(name)
-      continue unless users[name].has_key?('groups')
+      next unless users.has_key?(name)
+      next unless users[name].has_key?('groups')
 
       account['ensure'] = 'absent' unless (users[name]['groups'] & groups).any?
     end
