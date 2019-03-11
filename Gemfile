@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'puppet', '~> 3.8'
 gem 'rake'
 gem 'librarian-puppet'
+gem 'minitar', '~> 0.6'
 
 group :test do
   gem 'metadata-json-lint'
